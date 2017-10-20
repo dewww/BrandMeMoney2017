@@ -1,0 +1,19 @@
+import ui
+
+v = data = '''\
+QlpoOTFBWSZTWe9KOLQAATffgFUQUGd/8DrAFY6/75/aQAG8zruVcJJU0ybUwm0kzQjADQ
+jEaNNGAlTaSp6bVPTU9Rmp6nqNNGajeqAAGRiDFU/VNqGgaAAyPRAAAAAkiTJTxpJ6agAA
+ADQ0DynpqRBTSGBHVYtjZ2OQYo9HUGnFxQYIxlSACpEBxpKQzA2TsO5UITiixBPDf2asAx
+CEwTfyOAGKaq7oJMpv0dNBA5ea+8SdgcZOhkmUYxUMAeHPaedWR4DusbRYMLsQCohSQdiJ
+PTImApIoA5ZAjK0qfIkJxIZAGq4kNDTsiAOwMEpEGR2W0vfxKLoc1RsoxT5NUrKsjlF0q2
+nbW+N63Ji9IIVAQO9LlYSKKPaHvQj+GXsNMY3PzZt22uskXS3y0Y/AMGouH1lMJLBVheGN
+aHwJBAgvsLSLBUUBRL+MtdYZwLTHSyccYypLqJzhfocibRcDE/q4cyh7kHeko7Lxelmjfd
+RSRDDNUQvCqVgizGL6C9xpU7w1gV6AnpNAdaeoLSlWhC43DbdYbajRLCTopWB5YCzE8pnL
+MpUrQ9QuoFdI5IEwJCGkO64BFOLN4L37Af4u5IpwoSHelHFo
+'''
+import ui
+import bz2
+from base64 import b64decode
+pyui = bz2.decompress(b64decode(data))
+v = ui.load_view_str(pyui.decode('utf-8'))
+v.present('sheet')
